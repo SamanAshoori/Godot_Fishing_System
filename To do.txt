@@ -1,0 +1,8 @@
+To do 
+Create 128 x 128 fisher man sprite
+be able to collect fish
+fish score go up
+
+with enough fish score buy a baited net and fish automatically go there and get caught
+
+- I think enough for fishing system
