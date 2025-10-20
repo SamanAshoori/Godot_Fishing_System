@@ -7,10 +7,10 @@ var dir = -1
 func _process(delta: float) -> void:
 	if dir == -1:
 		self.position.x = position.x - Speed
-		sprite_2d.flip_h = true
+		sprite_2d.flip_h = false
 	else:
 		self.position.x = position.x + Speed
-		sprite_2d.flip_h = false
+		sprite_2d.flip_h = true
 	
 
 
