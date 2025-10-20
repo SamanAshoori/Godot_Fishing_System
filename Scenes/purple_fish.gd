@@ -1,6 +1,6 @@
 extends Node2D
 
-const Speed = 1.5;
+const Speed = 0.5;
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var dir = -1

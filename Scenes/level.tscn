@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bkik8xy2h31d8" path="res://Sprites/spritesheet-double.png" id="1_tumq0"]
 [ext_resource type="Texture2D" uid="uid://h5qvutrlm23f" path="res://Sprites/Custom_Sprites/saman_tileset.svg" id="2_6phgx"]
 [ext_resource type="PackedScene" uid="uid://4s5h6ucqjufg" path="res://Scenes/fish_spawner.tscn" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://7dahhssekppb" path="res://Scenes/player.tscn" id="4_81xng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5f4k"]
 texture = ExtResource("1_tumq0")
@@ -159,10 +160,7 @@ sources/0 = SubResource("TileSetAtlasSource_k5f4k")
 sources/2 = SubResource("TileSetAtlasSource_81xng")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5f4k"]
-size = Vector2(243, 834)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f4k"]
-normal = Vector2(-0.999853, 0.0171649)
+size = Vector2(279, 852)
 
 [node name="Level" type="Node2D"]
 
@@ -176,15 +174,11 @@ position = Vector2(566, 394)
 [node name="Sandy_Area" type="Area2D" parent="."]
 
 [node name="Sand_Box" type="CollisionShape2D" parent="Sandy_Area"]
-position = Vector2(18.5, 407)
+position = Vector2(20.5, 416)
 shape = SubResource("RectangleShape2D_k5f4k")
-
-[node name="Sandy_Area2" type="Area2D" parent="."]
-position = Vector2(1912, -7)
-
-[node name="Sand_Box" type="CollisionShape2D" parent="Sandy_Area2"]
-position = Vector2(18.5, 407)
-shape = SubResource("WorldBoundaryShape2D_k5f4k")
 
 [node name="fish_spawner" parent="." instance=ExtResource("2_k5f4k")]
 position = Vector2(1424, 369)
+
+[node name="Player" parent="." instance=ExtResource("4_81xng")]
+position = Vector2(29, 102)
