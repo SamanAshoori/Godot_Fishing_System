@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7dahhssekppb"]
+[gd_scene load_steps=9 format=3 uid="uid://7dahhssekppb"]
 
 [ext_resource type="Script" uid="uid://dbr8thttl3m11" path="res://Scenes/player.gd" id="1_fkybt"]
 [ext_resource type="Texture2D" uid="uid://c5te4eyx855i8" path="res://Sprites/Custom_Sprites/player_sprite/player_down.svg" id="1_vgqql"]
@@ -44,6 +44,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
 radius = 9.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
+radius = 77.026
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fkybt")
 
@@ -53,3 +56,10 @@ animation = &"player_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vgqql")
+
+[node name="fish_catching_area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish_catching_area"]
+scale = Vector2(0.936421, 1)
+shape = SubResource("CircleShape2D_fkybt")
