@@ -189,7 +189,7 @@ position = Vector2(1424, 369)
 position = Vector2(29, 102)
 platform_wall_layers = 2
 
-[node name="Water" type="Area2D" parent="."]
+[node name="Water" type="StaticBody2D" parent="."]
 position = Vector2(649, 399)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
