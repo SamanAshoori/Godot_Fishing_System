@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cns20rdj4ik1t"]
+[gd_scene load_steps=10 format=4 uid="uid://cns20rdj4ik1t"]
 
 [ext_resource type="Texture2D" uid="uid://bkik8xy2h31d8" path="res://Sprites/spritesheet-double.png" id="1_tumq0"]
 [ext_resource type="Texture2D" uid="uid://h5qvutrlm23f" path="res://Sprites/Custom_Sprites/saman_tileset.svg" id="2_6phgx"]
@@ -162,6 +162,9 @@ sources/2 = SubResource("TileSetAtlasSource_81xng")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5f4k"]
 size = Vector2(279, 852)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81xng"]
+size = Vector2(990, 730)
+
 [node name="Level" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -172,6 +175,8 @@ tile_set = SubResource("TileSet_6phgx")
 position = Vector2(566, 394)
 
 [node name="Sandy_Area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sand_Box" type="CollisionShape2D" parent="Sandy_Area"]
 position = Vector2(20.5, 416)
@@ -182,3 +187,11 @@ position = Vector2(1424, 369)
 
 [node name="Player" parent="." instance=ExtResource("4_81xng")]
 position = Vector2(29, 102)
+platform_wall_layers = 2
+
+[node name="Water" type="Area2D" parent="."]
+position = Vector2(649, 399)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(-1, -36)
+shape = SubResource("RectangleShape2D_81xng")

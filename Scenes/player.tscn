@@ -48,6 +48,7 @@ radius = 9.0
 radius = 77.026
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_fkybt")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -59,7 +60,10 @@ shape = SubResource("CircleShape2D_vgqql")
 
 [node name="fish_catching_area" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fish_catching_area"]
 scale = Vector2(0.936421, 1)
 shape = SubResource("CircleShape2D_fkybt")
+
+[node name="VisibleCollision" type="Line2D" parent="fish_catching_area"]

@@ -4,6 +4,29 @@ var Score = 0
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite: AnimatedSprite2D = $Sprite2D
+@export var segments = 32
+
+func _ready():
+	var collion_shape = $fish_catching_area/CollisionShape2D
+	var line_2d = $fish_catching_area/VisibleCollision
+	var radius = collion_shape.shape.radius
+	draw_circle_(line_2d,radius,segments)
+	
+	line_2d.width = 1.0
+	line_2d.default_color = Color.GREEN
+	
+	
+func draw_circle_(line_2d_node : Line2D , radius:float , segments: int):
+	var points = PackedVector2Array()
+	var angle_step = TAU / segments
+	
+	for i in range(segments + 1):
+		var angle = angle_step * i
+		var x = radius * cos(angle)
+		var y = radius * sin(angle)
+		
+		points.append(Vector2(x,y))
+	line_2d_node.points = points
 
 func _physics_process(delta: float) -> void:
 
